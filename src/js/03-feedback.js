@@ -10,7 +10,7 @@ formEL.addEventListener(
   throttle(function (e) {
     const inputValue = e.currentTarget.elements.email.value;
     const message = e.currentTarget.elements.message.value;
-    console.log(message);
+
     const valueObj = {
       email: inputValue,
       message: message,
