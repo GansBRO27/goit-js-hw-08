@@ -1,7 +1,7 @@
 import throttle from 'lodash.throttle';
 
 const formEL = document.querySelector('.feedback-form');
-const localStorageIs = localStorage.getItem('feedback-form-state');
+
 const input = document.querySelector('input');
 const textarea = document.querySelector('textarea');
 populateInputes();
@@ -22,12 +22,15 @@ formEL.addEventListener(
 
 formEL.addEventListener('submit', evt => {
   evt.preventDefault();
+  const localStorageIs = localStorage.getItem('feedback-form-state');
   const Obj = JSON.parse(localStorageIs);
   console.log(Obj);
   formEL.reset();
   localStorage.removeItem('feedback-form-state');
 });
+
 function populateInputes() {
+  const localStorageIs = localStorage.getItem('feedback-form-state');
   const saveObj = JSON.parse(localStorageIs);
 
   if (saveObj) {
