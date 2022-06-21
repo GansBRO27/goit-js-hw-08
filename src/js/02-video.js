@@ -10,9 +10,9 @@ player.on(
     localStorage.setItem('videoplayer-current-time', videoCurrentTime);
   }, 1000)
 );
-const localCurrentTime = localStorage.getItem('videoplayer-current-time');
+
 player
-  .setCurrentTime(JSON.parse(localStorage.getItem(localCurrentTime)))
+  .setCurrentTime(JSON.parse(localStorage.getItem('videoplayer-current-time')))
   .then(function (seconds) {})
   .catch(function (error) {
     switch (error.name) {
